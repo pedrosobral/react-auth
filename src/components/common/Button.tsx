@@ -11,7 +11,7 @@ interface Props {
 function Button({ text, onPress }: Props) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.button}>
-      <Text style={styles.text}>Buy Now</Text>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 }
