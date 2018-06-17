@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 interface Props {
-  children?: React.ReactNode[];
+  children?: JSX.Element[];
 }
 
 function Card({ children }: Props) {
