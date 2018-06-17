@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   },
   header: {
     color: 'white',
-    fontFamily: 'Poppins',
+    // fontFamily: 'Poppins',
     fontSize: 36,
   },
 });
