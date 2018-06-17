@@ -9,6 +9,7 @@ export interface LoginFormProps {
 
 export interface LoginFormState {
   email: string;
+  password: string;
 }
 
 export default class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
@@ -17,6 +18,7 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
 
     this.state = {
       email: '',
+      password: '',
     };
   }
 
@@ -32,7 +34,15 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
           />
         </CardSection>
 
-        <CardSection />
+        <CardSection>
+          <Input
+            secureTextEntry
+            label="Password"
+            placeholder="password"
+            value={this.state.password}
+            onChangeText={(password) => this.setState({ password })}
+          />
+        </CardSection>
 
         <CardSection>
           <Button text="Log in" />

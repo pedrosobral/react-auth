@@ -25,6 +25,12 @@ export interface InputProps {
    * The string that will be rendered before text input has been entered
    */
   placeholder?: string;
+
+  /**
+   * If true, the text input obscures the text entered so that sensitive text like passwords stay secure.
+   * The default value is false.
+   */
+  secureTextEntry?: boolean;
 }
 
 const Input: React.SFC<InputProps> = ({ label, ...props }) => {
