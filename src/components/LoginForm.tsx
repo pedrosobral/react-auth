@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 import { Button, Card, CardSection, Input } from './common';
 
@@ -10,9 +10,11 @@ export interface LoginFormProps {
 export interface LoginFormState {
   email: string;
   password: string;
+  error?: string;
 }
 
 export default class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
+
   constructor(props: LoginFormProps) {
     super(props);
 
@@ -20,6 +22,10 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
       email: '',
       password: '',
     };
+  }
+
+  onButtonPress() {
+    setTimeout(() => this.setState({ error: 'Error' }), 1000);
   }
 
   render() {
@@ -44,10 +50,20 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
           />
         </CardSection>
 
+        <Text style={styles.error}>{this.state.error}</Text>
+
         <CardSection>
-          <Button text="Log in" />
+          <Button onPress={this.onButtonPress.bind(this)} text="Log in" />
         </CardSection>
       </Card>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  error: {
+    color: 'red',
+    fontSize: 12,
+    padding: 5,
+  },
+});
