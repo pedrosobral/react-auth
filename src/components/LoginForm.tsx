@@ -4,11 +4,11 @@ import { TextInput } from 'react-native';
 import { Button, Card, CardSection, Input } from './common';
 
 export interface LoginFormProps {
-  text?: string;
+  email?: string;
 }
 
 export interface LoginFormState {
-  text: string;
+  email: string;
 }
 
 export default class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
@@ -16,7 +16,7 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
     super(props);
 
     this.state = {
-      text: '',
+      email: '',
     };
   }
 
@@ -26,8 +26,9 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
         <CardSection>
           <Input
             label="Email"
-            value={this.state.text}
-            onChangeText={(text) => this.setState({ text })}
+            placeholder="user@gmail.com"
+            value={this.state.email}
+            onChangeText={(email) => this.setState({ email })}
           />
         </CardSection>
 

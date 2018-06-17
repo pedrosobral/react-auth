@@ -20,15 +20,20 @@ export interface InputProps {
    * Changed text is passed as an argument to the callback handler.
    */
   onChangeText?: (text: string) => void;
+
+  /**
+   * The string that will be rendered before text input has been entered
+   */
+  placeholder?: string;
 }
 
-const Input: React.SFC<InputProps> = ({ label, value, onChangeText }) => {
+const Input: React.SFC<InputProps> = ({ label, ...props }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <TextInput
-        value={value}
-        onChangeText={onChangeText}
+        {...props}
+        autoCapitalize="none"
         style={styles.input}
       />
     </View>
@@ -43,7 +48,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   input: {
-    color: 'black',
+    color: 'blue',
     flex: 2,
     fontSize: 18,
     height: 20,
