@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyleSheet, Text, View} from 'react-native';
 
-export interface Props {
+interface Props {
   title: string;
 }
 
