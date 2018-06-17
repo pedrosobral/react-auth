@@ -1,17 +1,21 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Header } from './components/common';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-import LoginForm from './components/LoginForm';
+import reducers from './reducers';
+
+import { Header } from './components/common';
 
 export default class App extends React.Component<{}, object> {
   render() {
     return (
-      <View>
-        <Header title="albums" />
-        <LoginForm />
-      </View>
+      <Provider store={createStore(reducers)}>
+        <View>
+          <Header title="libraries" />
+        </View>
+      </Provider>
     );
   }
 }
