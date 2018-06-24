@@ -8,12 +8,15 @@ import reducers from './reducers';
 
 import { Header } from './components/common';
 
+import LibraryList from './components/LibraryListContainer';
+
 export default class App extends React.Component<{}, object> {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
+        <View style={{ flex: 1 }}>
           <Header title="libraries" />
+          <LibraryList />
         </View>
       </Provider>
     );
