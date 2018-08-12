@@ -17,6 +17,7 @@ export class ListItem extends React.Component<ListItemProps, object> {
     if (this.props.expanded) {
       return <Text>{this.props.library.description}</Text>;
     }
+    return null;
   }
 
   render() {

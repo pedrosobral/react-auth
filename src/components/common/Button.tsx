@@ -2,7 +2,6 @@ import React from 'react';
 
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-// import { FONT_FAMILY } from '../constants';
 interface Props {
   text: string;
   onPress?(): void;
