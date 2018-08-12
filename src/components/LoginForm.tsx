@@ -13,6 +13,8 @@ export interface LoginFormState {
   error?: string;
 }
 
+const ONE_SECOND_TYMEOUT = 1000;
+
 export default class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
 
   constructor(props: LoginFormProps) {
@@ -25,7 +27,7 @@ export default class LoginForm extends React.Component<LoginFormProps, LoginForm
   }
 
   onButtonPress() {
-    setTimeout(() => this.setState({ error: 'Error' }), 1000);
+    setTimeout(() => this.setState({ error: 'Error' }), ONE_SECOND_TYMEOUT);
   }
 
   render() {
